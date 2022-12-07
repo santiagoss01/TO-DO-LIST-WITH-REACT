@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const NewList = () => {
     const [myinput, setMyinput] = useState("");
 
-    const [myList, setMylist] = useState(["Reading", "Cooking", "dancing-alone", "Playing with my cats"]);
+    const [myList, setMylist] = useState(["Reading", "Cooking", "dancing alone", "Cat food"]);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -22,13 +22,19 @@ const NewList = () => {
         }))
     };
     const [applyStyle, setApplystyle] = useState("");
+     
+    const[completedTodo, setCompletedtodo] = useState([]);
 
-    // const taskCompleted = (e) => {
-    //     myList.map((element, id) => {
-    //         if (e.target.id === id) 
-    //             setApplystyle("");
-    //        else if (e.target.id !== id) 
-    //         setApplystyle(" red");})}
+    const taskCompleted = (index) => {
+        setCompletedtodo([...completedTodo, index]);
+    }
+
+    const[imporTanttodo, setimporTanttodo] = useState([]);
+
+    const importantTask = (index) => {
+        setimporTanttodo([...imporTanttodo, index]);
+    }
+
 
 
 
@@ -42,19 +48,27 @@ const NewList = () => {
             <div className=" container d-flex justify-content-center">
                 <ul className="list-group">
                     {myList.map((listElement, index) => {
-                        return <li key={index} onClick={(e) => { taskCompleted(e) }} className={"list-group-item d-flex  justify-content-between hidden-icon myStyledlist"}>
+                        return <li key={index} className= {`list-group-item d-flex  justify-content-between hidden-icon myStyledlist ${completedTodo.includes(index)? " red":""} ${imporTanttodo.includes(index)? " important":""}`} >
                             {listElement}
-                            <span>
-                                <a key={index} onMouseOver={(e) => { setApplystyle(" red") }} onMouseOut={(e) => { setApplystyle("") }} onClick={(e) => { removeFromlist(index) }}>
-                                    <i className={"fas fa-trash selected " + applyStyle}></i>
+                            <span className="d-flex justify-content-around">
+                                <a key={index}  onClick={(e) => { removeFromlist(index) }}>
+                                    <i id="trash"className={"fas fa-trash selected "}></i>
                                 </a>
+                                <a key={index} onClick={(e) =>{taskCompleted(index)}}>
+                                    <i className={"fas fa-check selected "}></i>
+                                </a>
+                                <a key={index} onClick={(e) =>{importantTask(index)}}>
+                                    <i className={"fas fa-exclamation selected "}></i>
+                                </a>
+                                
+                                
                             </span>
                         </li>
                     })
                     }
 
                 </ul>
-                {myList.length ? "" : <span className="warnign"> Add a new task!</span>}
+                {myList.length ? "" : <span id="warning"> Add a new task!</span>}
             </div>
         </div>
 

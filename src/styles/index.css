@@ -1,10 +1,11 @@
 .red{
-    color:  #549aab;
+  background-color:  red;
 }
 
 body{
     background-color: #3b6a76;
 }
+
 
 
 
@@ -58,7 +59,35 @@ background-color: #f1802d;
 
 
 }
+#warning{
+    position: relative;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 900;
+    font-size: 33px;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 0px;
+    letter-spacing: 0.05em;
+    color: #f6f6f6;
+    margin-top: 30px;
+}
+.red{
+    text-decoration:line-through
+  }
+  
+  .fa-trash{
+    right: 5px;
+  }
 
+.fa-trash:hover{
+    color:#3b6a76 ;
+}
+.important{
+    background-color: brown;
+}
+#trash{
+    right: 5px;
+}
 
 /* 
 
