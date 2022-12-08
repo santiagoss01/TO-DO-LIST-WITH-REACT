@@ -71,13 +71,15 @@ background-color: #f1802d;
     color: #f6f6f6;
     margin-top: 30px;
 }
+#warning:hover{
+  color:   #f1802d;
+
+}
 .red{
     text-decoration:line-through
   }
   
-  .fa-trash{
-    right: 5px;
-  }
+
 
 .fa-trash:hover{
     color:#3b6a76 ;
@@ -85,8 +87,28 @@ background-color: #f1802d;
 .important{
     background-color: brown;
 }
+span{
+    padding-right: 10px;
+}
+
 #trash{
-    right: 5px;
+    margin-right: 10px;
+
+}
+
+
+#select{
+    margin-right: 10px;
+
+}
+#select:hover{
+    color:#3b6a76 ;
+
+}
+
+#check:hover{
+    color:#3b6a76 ;
+
 }
 
 /* 

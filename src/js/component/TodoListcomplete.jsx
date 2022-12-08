@@ -51,13 +51,15 @@ const NewList = () => {
                         return <li key={index} className= {`list-group-item d-flex  justify-content-between hidden-icon myStyledlist ${completedTodo.includes(index)? " red":""} ${imporTanttodo.includes(index)? " important":""}`} >
                             {listElement}
                             <span className="d-flex justify-content-around">
-                                <a key={index}  onClick={(e) => { removeFromlist(index) }}>
-                                    <i id="trash"className={"fas fa-trash selected "}></i>
+                                
+                                <a id="trash" key={index}  onClick={(e) => { removeFromlist(index) }}>
+                                    <i className={"fas fa-trash selected "}></i>
                                 </a>
-                                <a key={index} onClick={(e) =>{taskCompleted(index)}}>
+                                <a id="select" key={index} onClick={(e) =>{taskCompleted(index)}}>
                                     <i className={"fas fa-check selected "}></i>
                                 </a>
-                                <a key={index} onClick={(e) =>{importantTask(index)}}>
+                            
+                                <a id="check" key={index} onClick={(e) =>{importantTask(index)}}>
                                     <i className={"fas fa-exclamation selected "}></i>
                                 </a>
                                 
